@@ -126,7 +126,7 @@ creates by previous Terraform-plan stage
 
       ### deployment manifest block
   ```yaml
-		apiVersion: extensions/v1beta1
+        apiVersion: extensions/v1beta1
         kind: Deployment
         metadata:
         name: terratest
