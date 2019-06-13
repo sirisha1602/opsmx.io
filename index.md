@@ -117,29 +117,29 @@ creates by previous Terraform-plan stage
  1. Create an Application to initiate Pipeline creation.
  2. Click on pipeline configure, add stage from the dropdown select Terraform-plan. 
         ![Screenshot](image1)
-      a. Cloud provider account - your kubernetes account name.
-      b. Cloud provider – kubernetes.
-      c. GitAccount - your git account.
-	  d. Terraform plan – https://github.com/<your-github-account>/TerraformPlansModule.git//Namespace. fork this GitHub 
+       * a. Cloud provider account - your kubernetes account name.
+       * b. Cloud provider – kubernetes.
+       * c. GitAccount - your git account.
+	   * d. Terraform plan – https://github.com/<your-github-account>/TerraformPlansModule.git//Namespace. fork this GitHub 
 	     repo https://github.com/OpsMx/TerraformPlansModule.git in your GitHub account. 
  3. Click on Add Stage, select Deploy Manifest then select the Text radio button for Manifest Source and copy deployment manifest block     given below.
 
-   * deployment manifest block
+      ### deployment manifest block
   ```yaml
-			apiVersion: extensions/v1beta1
-         kind: Deployment
-         metadata:
-      name: terratest
-      namespace: >-
+		apiVersion: extensions/v1beta1
+        kind: Deployment
+        metadata:
+        name: terratest
+        namespace: >-
         ${#stage('Terraform-plan')['context']['buildInfo']['outputValues']['nameSpace']}
-    spec:
-      replicas: 2
-      selector:
-        matchLabels:
-          app: terratest
-      strategy:
+        spec:
+        replicas: 2
+        selector:
+         matchLabels:
+         app: terratest
+        strategy:
         type: RollingUpdate
-      template:
+        template:
         metadata:
           labels:
             app: terratest
@@ -157,7 +157,7 @@ creates by previous Terraform-plan stage
   ```
 
 
-* 4. Save pipeline and run a pipeline
+ 4. Save pipeline and run a pipeline
 
 
 
