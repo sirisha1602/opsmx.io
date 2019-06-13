@@ -123,8 +123,8 @@ creates by previous Terraform-plan stage
 	     repo https://github.com/OpsMx/TerraformPlansModule.git in your GitHub account. 
 * 3. Click on Add Stage, select Deploy Manifest then select the Text radio button for Manifest Source and copy deployment manifest block given below.
 
-      * deployment manifest block
-            ```yaml
+* deployment manifest block
+  ```yaml
 			apiVersion: extensions/v1beta1
          kind: Deployment
          metadata:
@@ -153,7 +153,7 @@ creates by previous Terraform-plan stage
                   protocol: TCP
 
  	
-             ```
+ ```
 
 
 * 4. Save pipeline and run a pipeline
