@@ -3,9 +3,9 @@
 
 ## prerequisite
 
-    1.Run OpsMx terraApp service on same Debian spinnaker.
-    2.Create custom webhook stage in spinnaker.
-    3.Install terraform binary on same Debian spinnaker and OpsMx terraApp service machine.
+    ### 1.Run OpsMx terraApp service on same Debian spinnaker.
+    ### 2.Create custom webhook stage in spinnaker.
+    ### 3.Install terraform binary on same Debian spinnaker and OpsMx terraApp service machine.
 
 ## Run opsmx terraApp service
 
@@ -126,7 +126,7 @@ creates by previous Terraform-plan stage
 
       ### deployment manifest block
   ```yaml
-		apiVersion: extensions/v1beta1
+       apiVersion: extensions/v1beta1
         kind: Deployment
         metadata:
         name: terratest
