@@ -3,9 +3,9 @@
 
 ## prerequisite
 
-1.Run OpsMx terraApp service on same Debian spinnaker.
-2.Create custom webhook stage in spinnaker.
-3.Install terraform binary on same Debian spinnaker and OpsMx terraApp service machine.
+  * Run OpsMx terraApp service on same Debian spinnaker.
+  * Create custom webhook stage in spinnaker.
+  * Install terraform binary on same Debian spinnaker and OpsMx terraApp service machine.
 
 ## Run opsmx terraApp service
 
