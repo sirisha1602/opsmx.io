@@ -3,9 +3,9 @@
 
 ## prerequisite
 
-### 1. Run OpsMx terraApp service on same Debian spinnaker.
-### 2.Create custom webhook stage in spinnaker.
-### 3.Install terraform binary on same Debian spinnaker and OpsMx terraApp service machine.
+1. Run OpsMx terraApp service on same Debian spinnaker.
+2.Create custom webhook stage in spinnaker.
+3.Install terraform binary on same Debian spinnaker and OpsMx terraApp service machine.
 
 ## Run opsmx terraApp service
 
@@ -22,7 +22,7 @@ open terminal go inside zipfol directory and run terraApp service by the followi
 ## Create custom webhook stage in spinnaker
 
 create file in (~/.hal/default/profile/) directory by name orca-local.yml and copy custom webhook stage block given below 
-replace (ip:port) in url part "https://<ip:port>/api/v1/deleteTerraform" example http://192.x.x.135:8090/api/v1/startTerraform -- 192.x.x.135:8090 is
+replace (ip:port) in url part <pre><code>"https://<ip:port>/api/v1/deleteTerraform" </code></pre>example http://192.x.x.135:8090/api/v1/startTerraform -- 192.x.x.135:8090 is
 ip and port of spinnaker same machine on which opsmx terraApp service is running
 
 
@@ -95,13 +95,13 @@ after doing setting in orca-local.yml do hal deploy apply after deploying spinna
  1. Terraform-plan stage having four input block
 
 
-   * a. Cloud provider account – Pick cloud provider account name from your spinnaker clouds accounts which we are going to use as a             terraform infrastructure.
-   * b. Cloud provider – Provide the Type of Cloud Provider account, for example – Kubernetes, Openshift, etc.
-   * c. GitAccount – Provide the GITAccount account name which is configured in your spinnaker this mandatory when your terraform plan           present on same git hub account because we are supporting terraform plan as a remote artifact as well as in plan source fill             plan details in next text box means (d) step.
-   * d. Terraform plan – Provide the Terraform Plan here, we are accepting both inline and remote terraform plan
-        a. Example of Remote terraform plan:<pre><code> https://github.com/OpsMx/TerraformPlansModule.git//Namespace</code></pre> (where            https://github.com/OpsMx/TerraformPlansModule.git is git repo where //Namespace is one terraform module on the same repo) 
-        b. Example of inline terraform plan: place the whole content of this link->
-	   <pre><code>https://github.com/OpsMx/TerraformPlansModule/blob/master/Namespace/main.tf</code></pre>
+     * a. Cloud provider account – Pick cloud provider account name from your spinnaker clouds accounts which we are going to use as a terraform infrastructure.
+     * b. Cloud provider – Provide the Type of Cloud Provider account, for example – Kubernetes, Openshift, etc.
+     * c. GitAccount – Provide the GITAccount account name which is configured in your spinnaker this mandatory when your terraform plan present on same git hub account because we are supporting terraform plan as a remote artifact as well as in plan source fill             plan details in next text box means (d) step.
+     * d. Terraform plan – Provide the Terraform Plan here, we are accepting both inline and remote terraform plan
+          a. Example of Remote terraform plan:<pre><code> https://github.com/OpsMx/TerraformPlansModule.git//Namespace</code></pre> (where https://github.com/OpsMx/TerraformPlansModule.git is git repo where //Namespace is one terraform module on the same repo) 
+          b. Example of inline terraform plan: place the whole content of this link->
+	         <pre><code>https://github.com/OpsMx/TerraformPlansModule/blob/master/Namespace/main.tf</code></pre>
 
 
   2. Terraform-delete-plan stage having no input block it used for deleting a created terraform plan.
@@ -121,7 +121,7 @@ creates by previous Terraform-plan stage
        * b. Cloud provider – kubernetes.
        * c. GitAccount - your git account.
 	   * d. Terraform plan – https://github.com/<your-github-account>/TerraformPlansModule.git//Namespace. fork this GitHub 
-	     repo https://github.com/OpsMx/TerraformPlansModule.git in your GitHub account. 
+	     repo <pre><code>https://github.com/OpsMx/TerraformPlansModule.git</code></pre> in your GitHub account. 
  3. Click on Add Stage, select Deploy Manifest then select the Text radio button for Manifest Source and copy deployment manifest block     given below.
 
       ### deployment manifest block
