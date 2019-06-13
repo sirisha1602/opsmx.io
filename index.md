@@ -3,9 +3,9 @@
 
 ## prerequisite
 
-   * 1. Run OpsMx terraApp service on same Debian spinnaker.
-   * 2.Create custom webhook stage in spinnaker.
-   * 3.Install terraform binary on same Debian spinnaker and OpsMx terraApp service machine.
+    1.Run OpsMx terraApp service on same Debian spinnaker.
+    2.Create custom webhook stage in spinnaker.
+    3.Install terraform binary on same Debian spinnaker and OpsMx terraApp service machine.
 
 ## Run opsmx terraApp service
 
@@ -22,7 +22,7 @@ open terminal go inside zipfol directory and run terraApp service by the followi
 ## Create custom webhook stage in spinnaker
 
 create file in (~/.hal/default/profile/) directory by name orca-local.yml and copy custom webhook stage block given below 
-replace (ip:port) in url part <pre><code>"https://<ip:port>/api/v1/deleteTerraform" </code></pre>example http://192.x.x.135:8090/api/v1/startTerraform -- 192.x.x.135:8090 is
+replace (ip:port) in url part "https://<ip:port>/api/v1/deleteTerraform" example http://192.x.x.135:8090/api/v1/startTerraform -- 192.x.x.135:8090 is
 ip and port of spinnaker same machine on which opsmx terraApp service is running
 
 
