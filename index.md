@@ -95,12 +95,13 @@ after doing setting in orca-local.yml do hal deploy apply after deploying spinna
  1. Terraform-plan stage having four input block
 
 
-  a. Cloud provider account – Pick cloud provider account name from your spinnaker clouds accounts which we are going to use as a terraform infrastructure.
-  b.Cloud provider – Provide the Type of Cloud Provider account, for example – Kubernetes, Openshift, etc.
-  c.GitAccount – Provide the GITAccount account name which is configured in your spinnaker this mandatory when your terraform plan present on same git hub account because we are supporting terraform plan as a remote artifact as well as in plan source fill plan details in next text box means (d) step.
-  d.Terraform plan – Provide the Terraform Plan here, we are accepting both inline and remote terraform plan
-    a. Example of Remote terraform plan:<pre><code> https://github.com/OpsMx/TerraformPlansModule.git//Namespace</code></pre> (where https://github.com/OpsMx/TerraformPlansModule.git is git repo where //Namespace is one terraform module on the same repo) 
-    b. Example of inline terraform plan: place the whole content of this link-><pre><code>https://github.com/OpsMx/TerraformPlansModule/blob/master/Namespace/main.tf</code></pre>
+   * a. Cloud provider account – Pick cloud provider account name from your spinnaker clouds accounts which we are going to use as a             terraform infrastructure.
+   * b. Cloud provider – Provide the Type of Cloud Provider account, for example – Kubernetes, Openshift, etc.
+   * c. GitAccount – Provide the GITAccount account name which is configured in your spinnaker this mandatory when your terraform plan           present on same git hub account because we are supporting terraform plan as a remote artifact as well as in plan source fill             plan details in next text box means (d) step.
+   * d. Terraform plan – Provide the Terraform Plan here, we are accepting both inline and remote terraform plan
+        a. Example of Remote terraform plan:<pre><code> https://github.com/OpsMx/TerraformPlansModule.git//Namespace</code></pre> (where            https://github.com/OpsMx/TerraformPlansModule.git is git repo where //Namespace is one terraform module on the same repo) 
+        b. Example of inline terraform plan: place the whole content of this link->
+	   <pre><code>https://github.com/OpsMx/TerraformPlansModule/blob/master/Namespace/main.tf</code></pre>
 
 
   2. Terraform-delete-plan stage having no input block it used for deleting a created terraform plan.
