@@ -7,7 +7,7 @@
 ### 2.Create custom webhook stage in spinnaker.
 ### 3.Install terraform binary on same Debian spinnaker and OpsMx terraApp service machine.
 
-##Run opsmx terraApp service
+## Run opsmx terraApp service
 
 
 download tar Link: <pre><code>https://github.com/OpsMx/Terraform-spinnaker/raw/master/terraApp/artifacts/zipfol.tar.gz </code></pre>
@@ -92,7 +92,7 @@ ip and port of spinnaker same machine on which opsmx terraApp service is running
 ```
 after doing setting in orca-local.yml do hal deploy apply after deploying spinnaker successfully our setting will add two stages in spinnaker 
 
-* 1. Terraform-plan stage having four input block
+ 1. Terraform-plan stage having four input block
 
 
   a. Cloud provider account – Pick cloud provider account name from your spinnaker clouds accounts which we are going to use as a terraform infrastructure.
@@ -103,7 +103,7 @@ after doing setting in orca-local.yml do hal deploy apply after deploying spinna
     b. Example of inline terraform plan: place the whole content of this link-><pre><code>https://github.com/OpsMx/TerraformPlansModule/blob/master/Namespace/main.tf</code></pre>
 
 
- * 2. Terraform-delete-plan stage having no input block it used for deleting a created terraform plan.
+  2. Terraform-delete-plan stage having no input block it used for deleting a created terraform plan.
 
 ### Now steps to experience running integrated Terraform-plan custom webhook stage from your spinnaker 
 
@@ -113,17 +113,17 @@ will create a pipeline which has two stages one- Terraform-plan and second- depl
 use for creating a namespace in kubernetes and in deploy(manifest) will deploy deployment in the same namespace which 
 creates by previous Terraform-plan stage
 
-* 1. Create an Application to initiate Pipeline creation.
-* 2. Click on pipeline configure, add stage from the dropdown select Terraform-plan. 
+ 1. Create an Application to initiate Pipeline creation.
+ 2. Click on pipeline configure, add stage from the dropdown select Terraform-plan. 
         ![Screenshot](image1)
       a. Cloud provider account - your kubernetes account name.
       b. Cloud provider – kubernetes.
       c. GitAccount - your git account.
 	  d. Terraform plan – https://github.com/<your-github-account>/TerraformPlansModule.git//Namespace. fork this GitHub 
 	     repo https://github.com/OpsMx/TerraformPlansModule.git in your GitHub account. 
-* 3. Click on Add Stage, select Deploy Manifest then select the Text radio button for Manifest Source and copy deployment manifest block given below.
+ 3. Click on Add Stage, select Deploy Manifest then select the Text radio button for Manifest Source and copy deployment manifest block     given below.
 
-* deployment manifest block
+   * deployment manifest block
   ```yaml
 			apiVersion: extensions/v1beta1
          kind: Deployment
@@ -153,7 +153,7 @@ creates by previous Terraform-plan stage
                   protocol: TCP
 
  	
- ```
+  ```
 
 
 * 4. Save pipeline and run a pipeline
